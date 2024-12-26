@@ -6,7 +6,8 @@
     languageISO = "EN"
     languageTag = "en-US"
     footer = 'Powered by <a class="text-muted" href="https://thulite.io/">Thulite</a>'
-    alertText = '<a class="alert-link stretched-link fw-normal" href="/blog/example-post/">Doks version 1.0 just shipped!</a>'
+    #alertText = '<a class="alert-link stretched-link fw-normal" href="/blog/example-post/">🚧 The site is under construction.</a>'
+    alertText = '🚧 The site is under construction'
 
 [de]
   languageName = "German"
