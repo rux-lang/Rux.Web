@@ -1,12 +1,12 @@
 ---
-title: "Rux Programming Language"
-description: ""
-lead: "Congrats on setting up a new Doks project!"
+title: "Rux"
+description: "Fast, compiled, strongly typed, multi-paradigm, general-purpose programming language"
+lead: "Fast, compiled, strongly typed, multi-paradigm, general-purpose programming language"
 date: 2023-09-07T16:33:54+02:00
 lastmod: 2023-09-07T16:33:54+02:00
 draft: false
 seo:
-  title: "Welcome to Doks" # custom title (optional)
+  title: "Rux Programming Language" # custom title (optional)
   description: "" # custom description (recommended)
   canonical: "" # custom canonical URL (optional)
   robots: "" # custom robot tags (optional)

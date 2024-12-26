@@ -1,5 +1,5 @@
-title = "My Docs"
-baseurl = "http://localhost/"
+title = "Rux"
+baseurl = "https://rux-lang.dev/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
