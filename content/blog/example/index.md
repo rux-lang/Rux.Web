@@ -1,9 +1,9 @@
 ---
-title: "Example Post"
+title: "Example post"
 description: "Just an example post."
 summary: "You can use blog posts for announcing product updates and features."
-date: 2024-12-25T22:17:00+02:00
-lastmod: 2024-12-25T22:17:00+02:00
+date: 2024-12-31T09:00:00+02:00
+lastmod: 2024-12-31T09:00:00+02:00
 draft: false
 weight: 50
 categories: []

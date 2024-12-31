@@ -1,17 +1,31 @@
 // Put your custom SCSS variables here
 
+// Light mode
+$primary: #4f46e5;
+
+// Dark mode
+$link-color-dark: #a5b4fc;
+$button-color-dark: #a5b4fc;
+
+:root,
+::backdrop {
+  --sl-color-accent-high: #a5b4fc;
+}
+
 $font-family-sans-serif:
-    "Merriweather",
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    "Noto Sans",
-    "Liberation Sans",
-    Arial,
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+  Inter,
+  system-ui,
+  -apple-system,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  "Noto Sans",
+  "Liberation Sans",
+  Arial,
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji";
+
+$font-family-monospace: "JetBrains Mono", monospace, ui-monospace;
