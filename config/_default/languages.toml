@@ -5,7 +5,7 @@
   [en.params]
     languageISO = "EN"
     languageTag = "en-US"
-    footer = 'Powered by <a class="text-muted" href="https://thulite.io/">Thulite</a>'
+    footer = 'Powered by <a class="text-muted" href="https://getdoks.org/">Doks</a>'
     #alertText = '<a class="alert-link stretched-link fw-normal" href="/blog/example-post/">🚧 The site is under construction.</a>'
     alertText = '🚧 The site is under construction'
 
@@ -16,7 +16,7 @@
   [de.params]
     languageISO = "DE"
     languageTag = "de-DE"
-    footer = 'Gebaut mit <a class="text-muted" href="https://thulite.io/">Thulite</a>'
+    footer = 'Gebaut mit <a class="text-muted" href="https://getdoks.org/">Doks</a>'
     alertText = 'Neue Version ist da! <a class="alert-link stretched-link" href="https://getdoks.org/blog/doks-v0.5/">Doks v0.5</a>'
 
 [nl]

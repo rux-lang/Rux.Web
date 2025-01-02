@@ -1,19 +1,19 @@
 // Put your custom SCSS variables here
 
 // Light mode
-$primary: #4f46e5;
+$primary: #22c55e;// #4f46e5;
 
 // Dark mode
-$link-color-dark: #a5b4fc;
-$button-color-dark: #a5b4fc;
+$link-color-dark: #4ade80;
+$button-color-dark: #4ade80;
 
 :root,
 ::backdrop {
-  --sl-color-accent-high: #a5b4fc;
+  --sl-color-accent-high: #4ade80;
 }
 
 $font-family-sans-serif:
-  Inter,
+  "Noto Sans",
   system-ui,
   -apple-system,
   "Segoe UI",
