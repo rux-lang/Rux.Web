@@ -1,0 +1,59 @@
+/* Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* Add accessible line-height */
+  line-height: 1.5;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+header {
+  max-width: 1536px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+header nav {
+  display: flex;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+header nav ul li {
+  display: inline-block;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+/*# sourceMappingURL=main.css.map */
