@@ -1,5 +1,20 @@
-@forward "settings";
+@charset "UTF-8";
 
-@use "document";
-@use "typography";
-@use "header";
+// Base stuff
+@use 'base/base';
+@use 'base/fonts';
+@use 'base/helpers';
+@use 'base/typography';
+
+// Layout-related sections
+@use 'layout/footer';
+@use 'layout/header';
+
+// Components
+@use 'components/button';
+
+// Pages
+@use 'pages/home';
+
+// Themes
+@use 'themes/default';

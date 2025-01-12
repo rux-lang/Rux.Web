@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+@use "sass:math";
+@use "../abstracts";
+
+.footer {  
+  padding: 2rem max(calc(50% - math.div(abstracts.$max-width, 2)), 2rem);
+  border-top: 1px solid #bdbdbd;
+  text-align: center;
+}
+
+.footer p {  
+  font-size: 1rem;
+}

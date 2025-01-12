@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+@use "sass:math";
+@use "../abstracts";
+
+.header {
+  top: 0;
+  position: sticky;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem max(calc(50% - math.div(abstracts.$max-width, 2)), 2rem);
+  border-bottom: 1px solid #bdbdbd;
+  backdrop-filter: blur(10px);
+  background-color: rgb(255 255 255 / .75);
+}
+
+.header-logo {
+  color: inherit;
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+
+  ul {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+
+    li {
+      display: inline-block;
+
+    }
+  }
+}

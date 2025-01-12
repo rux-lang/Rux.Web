@@ -1,17 +1,110 @@
-/* Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Remove default margin */
 * {
   margin: 0;
+  padding: 0;
 }
 
 body {
   /* Add accessible line-height */
   line-height: 1.5;
-  font-family: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: rgb(229, 0, 80);
+  text-decoration: none;
+}
+a:hover, a:active, a:focus, a:focus-within {
+  color: rgb(34, 34, 34);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+}
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  max-width: 1180px; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  padding-left: 20px; /* 3 */
+  padding-right: 20px; /* 3 */
+  width: 100%; /* 1 */
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: rgb(34, 34, 34);
+  font: normal 125%/1.4 "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* Avoid text overflows */
@@ -28,32 +121,50 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
-header {
-  max-width: 1536px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 4rem;
-}
-header nav {
-  display: flex;
-}
-header nav ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 2rem;
-}
-header nav ul li {
-  display: inline-block;
+.footer {
+  padding: 2rem max(50% - 590px, 2rem);
+  border-top: 1px solid #bdbdbd;
+  text-align: center;
 }
 
-.logo {
+.footer p {
+  font-size: 1rem;
+}
+
+.header {
+  top: 0;
+  position: sticky;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem max(50% - 590px, 2rem);
+  border-bottom: 1px solid #bdbdbd;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.header-logo {
+  color: inherit;
   font-size: 1.75rem;
   font-weight: bold;
   text-decoration: none;
-  color: inherit;
+}
+
+.header-nav {
+  display: flex;
+}
+.header-nav ul {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.header-nav ul li {
+  display: inline-block;
+}
+
+.main {
+  padding: 2rem max(50% - 590px, 2rem);
 }
 
 /*# sourceMappingURL=main.css.map */

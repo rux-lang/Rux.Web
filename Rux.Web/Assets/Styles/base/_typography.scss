@@ -1,4 +1,14 @@
-﻿// Headings
+@use '../abstracts';
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: abstracts.$text-color;
+  font: normal 125% / 1.4 abstracts.$font-sans;
+}
+
+// Headings
 
 /* Avoid text overflows */
 p, h1, h2, h3, h4, h5, h6 {

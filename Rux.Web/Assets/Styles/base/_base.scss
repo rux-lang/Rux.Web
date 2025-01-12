@@ -1,0 +1,60 @@
+@use '../abstracts';
+
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+
+// Use a more-intuitive box-sizing model
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// Remove default margin
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Add accessible line-height */
+  line-height: 1.5;
+  //font-family: settings.$font-sans;
+}
+
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: abstracts.$brand-color;
+  text-decoration: none;
+
+  @include abstracts.on-event {
+    color: abstracts.$text-color;
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+}

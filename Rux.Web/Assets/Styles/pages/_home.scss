@@ -1,0 +1,9 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+@use "sass:math";
+@use "../abstracts";
+
+.main {
+  padding: 2rem max(calc(50% - math.div(abstracts.$max-width, 2)), 2rem);
+}

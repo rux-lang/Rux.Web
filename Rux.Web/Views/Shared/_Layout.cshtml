@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="~/css/main.css" asp-append-version="true"/>
 </head>
 <body>
-<header>
-    <a class="logo" asp-controller="Home" asp-action="Index">
+<header class="header">
+    <a class="header-logo" asp-controller="Home" asp-action="Index">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"
              viewBox="0 0 24 24">
             <defs>
@@ -31,7 +31,7 @@
         </svg>
         <span>Rux</span>
     </a>
-    <nav>
+    <nav class="header-nav">
         <ul>
             <li>Docs</li>
             <li>Blog</li>
@@ -91,12 +91,13 @@
         </a>
     </nav>
 </header>
-<main>
+<main class="main">
     @RenderBody()
 </main>
-<footer>
-    <p>Released under the MIT License</p>
-    <p>Copyright &copy; 2025 - Rux Labs & Rux Contributors</p>
+<footer class="footer">
+    <p>Released under the <a href="https://github.com/rux-lang/Rux/blob/main/LICENSE" target="_blank">MIT License</a>
+    </p>
+    <p>Copyright &copy; 2024-2025 Rux Contributors</p>
 </footer>
 </body>
 </html>

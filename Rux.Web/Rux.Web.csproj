@@ -75,4 +75,12 @@
       <None Include="wwwroot\js\modal.js" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Assets\Styles\abstracts\" />
+      <Folder Include="Assets\Styles\base\" />
+      <Folder Include="Assets\Styles\components\" />
+      <Folder Include="Assets\Styles\pages\" />
+      <Folder Include="Assets\Styles\themes\" />
+    </ItemGroup>
+
 </Project>
