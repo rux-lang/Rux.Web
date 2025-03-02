@@ -1,15 +1,35 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var title = "Rux Programming Language";
+    if (ViewData["Title"] != null)
+        title = $"{ViewData["Title"]} - {title}";
+    const string description = "Fast, compiled, strongly typed, multi-paradigm, general-purpose programming language";
+    var year = DateTime.Now.Year;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>@title</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - Rux.Web</title>
-    <link rel="icon" href="/favicon.ico" sizes="32x32">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="description" content="@description">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@@ruxlang">
+    <meta name="twitter:creator" content="@@ruxlang">
+    <meta name="twitter:title" content="@title">
+    <meta name="twitter:description" content="@description">
+    <meta name="twitter:image" content="https://rux-lang.dev/images/rux-social.jpg">
+    <meta property="og:title" content="@title"/>
+    <meta property="og:description" content="@description">
+    <meta property="og:image" content="https://rux-lang.dev/images/rux-social-wide.jpg"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <link rel="icon" href="~/favicon.ico" sizes="32x32">
+    <link rel="icon" href="~/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="~/icons/apple-touch-icon.png">
+    <link rel="manifest" href="~/icons/manifest.webmanifest">
+    <link rel="stylesheet" href="~/styles/main.css" asp-append-version="true"/>
     <script type="importmap"></script>
-    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true"/>
 </head>
 <body>
 <header class="header">
@@ -33,8 +53,8 @@
     </a>
     <nav class="header-nav">
         <ul>
-            <li>Docs</li>
-            <li>Blog</li>
+            <li><a asp-controller="Docs" asp-action="Index">Docs</a></li>
+            <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
         </ul>
         <button>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -97,7 +117,8 @@
 <footer class="footer">
     <p>Released under the <a href="https://github.com/rux-lang/Rux/blob/main/LICENSE" target="_blank">MIT License</a>
     </p>
-    <p>Copyright &copy; 2024-2025 Rux Contributors</p>
+    <p>Copyright &copy; 2024-@year Rux Contributors</p>
 </footer>
+<script src="~/scripts/main.js" asp-append-version="true"></script>
 </body>
 </html>

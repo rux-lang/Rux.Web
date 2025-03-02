@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rux.Web", "Rux.Web\Rux.Web.csproj", "{73324D60-3706-49CC-BD08-156519B72E28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rux.Web", "Rux.Web\Rux.Web.csproj", "{6ADA0C56-53CE-4D3C-A4F9-7560E38340DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{73324D60-3706-49CC-BD08-156519B72E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73324D60-3706-49CC-BD08-156519B72E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73324D60-3706-49CC-BD08-156519B72E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73324D60-3706-49CC-BD08-156519B72E28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ADA0C56-53CE-4D3C-A4F9-7560E38340DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ADA0C56-53CE-4D3C-A4F9-7560E38340DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ADA0C56-53CE-4D3C-A4F9-7560E38340DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ADA0C56-53CE-4D3C-A4F9-7560E38340DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
