@@ -3,9 +3,8 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "watch": "sass --watch --update --style=expanded Assets/Styles:wwwroot/css",
-    "build": "sass --no-source-map --style=compressed Assets/Styles:wwwroot/css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "sass --watch --update --style=expanded Assets/Styles:wwwroot/styles",
+    "build": "sass --no-source-map --style=compressed Assets/Styles:wwwroot/styles"
   },
   "author": "Ivan Muzyka",
   "license": "MIT",
