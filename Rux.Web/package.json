@@ -10,6 +10,6 @@
   "license": "MIT",
   "description": "https://rux-lang.dev",
   "devDependencies": {
-    "sass": "^1.83.0"
+    "sass": "^1.86.0"
   }
 }
