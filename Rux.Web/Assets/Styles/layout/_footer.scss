@@ -5,12 +5,13 @@
 @use "sass:math";
 @use "../abstracts";
 
-.footer {  
+.footer {
   padding: 2rem max(calc(50% - math.div(abstracts.$max-width, 2)), 2rem);
   border-top: 1px solid #bdbdbd;
   text-align: center;
+
+  p {
+    font-size: 1rem;
+  }
 }
 
-.footer p {  
-  font-size: 1rem;
-}
