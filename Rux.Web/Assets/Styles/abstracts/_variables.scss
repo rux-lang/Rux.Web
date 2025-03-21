@@ -5,7 +5,7 @@
 
 /// Regular font family
 /// @type List
-$font-sans: "Fira Sans", "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-sans: "Fira Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 /// Serif font family
 /// @type List
@@ -44,9 +44,9 @@ $max-width: 1180px !default;
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
+        'small': 320px,
+        'medium': 768px,
+        'large': 1024px,
 ) !default;
 
 /// Relative or absolute URL where all assets are served from

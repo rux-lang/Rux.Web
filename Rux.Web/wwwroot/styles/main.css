@@ -104,7 +104,7 @@ img {
  */
 body {
   color: rgb(34, 34, 34);
-  font: normal 125%/1.4 "Fira Sans", "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font: normal 125%/1.4 "Fira Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* Avoid text overflows */
@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 1rem max(50% - 590px, 2rem);
+  padding: 0.5rem max(50% - 590px, 2rem);
   border-bottom: 1px solid #bdbdbd;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.75);
