@@ -1,0 +1,15 @@
+{
+  "name": "rux.web",
+  "version": "0.1.0",
+  "description": "Website for Rux programming language",
+  "license":"MIT",
+  "author": "Ivan Muzyka",  
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.12"
+  }
+}
