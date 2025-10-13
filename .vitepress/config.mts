@@ -8,7 +8,7 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   sitemap: {
-    hostname: 'https://rx-lang.dev'
+    hostname: 'https://rux-lang.dev'
   },
 
   themeConfig: {
@@ -54,16 +54,16 @@ export default defineConfig({
     },
 
     lastUpdated: {
-      text: 'Updated at',
+      text: 'Last updated',
       formatOptions: {
-        dateStyle: 'full',
+        dateStyle: 'medium',
         timeStyle: 'medium'
       }
     },
 
     footer: {
       message: 'Released under the <a href="https://github.com/rux-lang/Rux/blob/main/LICENSE">MIT License</a>',
-      copyright: 'Copyright © 2025 <a href="https://github.com/orgs/rux-lang/people">Ivan Muzyka</a>',
+      copyright: 'Copyright © 2025 <a href="https://github.com/musicvano">Ivan Muzyka</a>',
     },
   }
 })

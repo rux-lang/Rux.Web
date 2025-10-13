@@ -1,6 +1,6 @@
 # Introduction <Badge type="warning" text="dev" />
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+<!-- This page demonstrates some of the built-in markdown extensions provided by VitePress.
 
 ## Syntax Highlighting
 
@@ -82,4 +82,4 @@ This is a details block.
 
 ## More
 
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
+Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown). -->

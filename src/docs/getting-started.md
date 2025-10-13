@@ -2,9 +2,9 @@
 outline: deep
 ---
 
-# Getting Started
+# Getting Started <Badge type="warning" text="dev" />
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+<!-- This page demonstrates usage of some of the runtime APIs provided by VitePress.
 
 > [!NOTE]
 > Highlights information that users should take into account, even when skimming.
@@ -61,4 +61,4 @@ const { site, theme, page, frontmatter } = useData()
 
 ## More
 
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata). -->

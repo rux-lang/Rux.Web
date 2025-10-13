@@ -2,7 +2,7 @@
 
 Built with [VitePress](https://vitepress.dev)
 
-## 🚀 Project Structure
+## ⚙️ Project Structure
 
 Inside of the project, you'll see the following folders and files:
 
@@ -14,20 +14,19 @@ Inside of the project, you'll see the following folders and files:
 │   ├── docs/
 │   │   └── *.md
 │   ├── public/
-│   │   └── assets
+│   │   └── images/
 │   ├── index.md
-│   ├── *.md
-│   └── content.config.ts
+│   └── *.md
 └── package.json
 ```
 
 VitePress looks for `.md` files in the `src/` and `src/docs/` directories. Each file is exposed as a route based on its file name.
 
-Images can be added to `src/public/assets/` and embedded in Markdown with a relative link.
+Images can be added to `src/public/images/` and embedded in Markdown with a relative link.
 
 Static assets, like favicons, can be placed in the `src/public/` directory.
 
-## 🧞 Commands
+## 🔨 Commands
 
 All commands are run from the root of the project, from a terminal:
 
