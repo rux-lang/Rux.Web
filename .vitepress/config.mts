@@ -11,6 +11,16 @@ export default defineConfig({
     hostname: 'https://rux-lang.dev'
   },
 
+  head: [
+    ['script',
+      {
+        defer: 'true',
+        src: 'https://cloud.umami.is/script.js',
+        'data-website-id': 'c3db4674-752d-4334-a22b-6deba2e4ecfb'
+      }
+    ]
+  ],
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/logo.svg',
