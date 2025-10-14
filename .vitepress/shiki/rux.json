@@ -1,0 +1,1103 @@
+{
+  "displayName": "Rux",
+  "name": "rux",
+  "patterns": [
+    {
+      "begin": "(<)(\\[)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.brackets.angle.rux"
+        },
+        "2": {
+          "name": "punctuation.brackets.square.rux"
+        }
+      },
+      "end": ">",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.brackets.angle.rux"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#block-comments"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#gtypes"
+        },
+        {
+          "include": "#lvariables"
+        },
+        {
+          "include": "#lifetimes"
+        },
+        {
+          "include": "#punctuation"
+        },
+        {
+          "include": "#types"
+        }
+      ]
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "keyword.operator.macro.dollar.rux"
+        },
+        "3": {
+          "name": "keyword.other.crate.rux"
+        },
+        "4": {
+          "name": "entity.name.type.metavariable.rux"
+        },
+        "6": {
+          "name": "keyword.operator.key-value.rux"
+        },
+        "7": {
+          "name": "variable.other.metavariable.specifier.rux"
+        }
+      },
+      "match": "(\\$)((crate)|([A-Z]\\w*))(\\s*(:)\\s*(block|expr(?:_2021)?|ident|item|lifetime|literal|meta|pat(?:_param)?|path|stmt|tt|ty|vis)\\b)?",
+      "name": "meta.macro.metavariable.type.rux",
+      "patterns": [
+        {
+          "include": "#keywords"
+        }
+      ]
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "keyword.operator.macro.dollar.rux"
+        },
+        "2": {
+          "name": "variable.other.metavariable.name.rux"
+        },
+        "4": {
+          "name": "keyword.operator.key-value.rux"
+        },
+        "5": {
+          "name": "variable.other.metavariable.specifier.rux"
+        }
+      },
+      "match": "(\\$)([a-z]\\w*)(\\s*(:)\\s*(block|expr(?:_2021)?|ident|item|lifetime|literal|meta|pat(?:_param)?|path|stmt|tt|ty|vis)\\b)?",
+      "name": "meta.macro.metavariable.rux",
+      "patterns": [
+        {
+          "include": "#keywords"
+        }
+      ]
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "entity.name.function.macro.rules.rux"
+        },
+        "3": {
+          "name": "entity.name.function.macro.rux"
+        },
+        "4": {
+          "name": "entity.name.type.macro.rux"
+        },
+        "5": {
+          "name": "punctuation.brackets.curly.rux"
+        }
+      },
+      "match": "\\b(macro_rules!)\\s+(([0-9_a-z]+)|([A-Z][0-9_a-z]*))\\s+(\\{)",
+      "name": "meta.macro.rules.rux"
+    },
+    {
+      "captures": {
+        "1": {
+          "name": "storage.type.rux"
+        },
+        "2": {
+          "name": "entity.name.module.rux"
+        }
+      },
+      "match": "(mod)\\s+((?:r#(?!crate|[Ss]elf|super))?[a-z][0-9A-Z_a-z]*)"
+    },
+    {
+      "begin": "\\b(extern)\\s+(crate)",
+      "beginCaptures": {
+        "1": {
+          "name": "storage.type.rux"
+        },
+        "2": {
+          "name": "keyword.other.crate.rux"
+        }
+      },
+      "end": ";",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.semi.rux"
+        }
+      },
+      "name": "meta.import.rux",
+      "patterns": [
+        {
+          "include": "#block-comments"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#punctuation"
+        }
+      ]
+    },
+    {
+      "begin": "\\b(use)\\s",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.other.rux"
+        }
+      },
+      "end": ";",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.semi.rux"
+        }
+      },
+      "name": "meta.use.rux",
+      "patterns": [
+        {
+          "include": "#block-comments"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#namespaces"
+        },
+        {
+          "include": "#punctuation"
+        },
+        {
+          "include": "#types"
+        },
+        {
+          "include": "#lvariables"
+        }
+      ]
+    },
+    {
+      "include": "#block-comments"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#attributes"
+    },
+    {
+      "include": "#lvariables"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#gtypes"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#lifetimes"
+    },
+    {
+      "include": "#macros"
+    },
+    {
+      "include": "#namespaces"
+    },
+    {
+      "include": "#punctuation"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#variables"
+    }
+  ],
+  "repository": {
+    "attributes": {
+      "begin": "(#)(!?)(\\[)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.attribute.rux"
+        },
+        "3": {
+          "name": "punctuation.brackets.attribute.rux"
+        }
+      },
+      "end": "]",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.brackets.attribute.rux"
+        }
+      },
+      "name": "meta.attribute.rux",
+      "patterns": [
+        {
+          "include": "#block-comments"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#lifetimes"
+        },
+        {
+          "include": "#punctuation"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#gtypes"
+        },
+        {
+          "include": "#types"
+        }
+      ]
+    },
+    "block-comments": {
+      "patterns": [
+        {
+          "match": "/\\*\\*/",
+          "name": "comment.block.rux"
+        },
+        {
+          "begin": "/\\*\\*",
+          "end": "\\*/",
+          "name": "comment.block.documentation.rux",
+          "patterns": [
+            {
+              "include": "#block-comments"
+            }
+          ]
+        },
+        {
+          "begin": "/\\*(?!\\*)",
+          "end": "\\*/",
+          "name": "comment.block.rux",
+          "patterns": [
+            {
+              "include": "#block-comments"
+            }
+          ]
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.comment.rux"
+            }
+          },
+          "match": "(///).*$",
+          "name": "comment.line.documentation.rux"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.comment.rux"
+            }
+          },
+          "match": "(//).*$",
+          "name": "comment.line.double-slash.rux"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "match": "\\b[A-Z]{2}[0-9A-Z_]*\\b",
+          "name": "constant.other.caps.rux"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "storage.type.rux"
+            },
+            "2": {
+              "name": "constant.other.caps.rux"
+            }
+          },
+          "match": "\\b(const)\\s+([A-Z][0-9A-Z_a-z]*)\\b"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.separator.dot.decimal.rux"
+            },
+            "2": {
+              "name": "keyword.operator.exponent.rux"
+            },
+            "3": {
+              "name": "keyword.operator.exponent.sign.rux"
+            },
+            "4": {
+              "name": "constant.numeric.decimal.exponent.mantissa.rux"
+            },
+            "5": {
+              "name": "entity.name.type.numeric.rux"
+            }
+          },
+          "match": "\\b\\d[_\\d]*(\\.?)[_\\d]*(?:([Ee])([-+]?)([_\\d]+))?(f32|f64|i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)?\\b",
+          "name": "constant.numeric.decimal.rux"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.type.numeric.rux"
+            }
+          },
+          "match": "\\b0x[A-F_a-f\\d]+(i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)?\\b",
+          "name": "constant.numeric.hex.rux"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.type.numeric.rux"
+            }
+          },
+          "match": "\\b0o[0-7_]+(i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)?\\b",
+          "name": "constant.numeric.oct.rux"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.type.numeric.rux"
+            }
+          },
+          "match": "\\b0b[01_]+(i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)?\\b",
+          "name": "constant.numeric.bin.rux"
+        },
+        {
+          "match": "\\b(true|false)\\b",
+          "name": "constant.language.bool.rux"
+        }
+      ]
+    },
+    "escapes": {
+      "captures": {
+        "1": {
+          "name": "constant.character.escape.backslash.rux"
+        },
+        "2": {
+          "name": "constant.character.escape.bit.rux"
+        },
+        "3": {
+          "name": "constant.character.escape.unicode.rux"
+        },
+        "4": {
+          "name": "constant.character.escape.unicode.punctuation.rux"
+        },
+        "5": {
+          "name": "constant.character.escape.unicode.punctuation.rux"
+        }
+      },
+      "match": "(\\\\)(?:(x[0-7][A-Fa-f\\d])|(u(\\{)[A-Fa-f\\d]{4,6}(}))|.)",
+      "name": "constant.character.escape.rux"
+    },
+    "functions": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.other.rux"
+            },
+            "2": {
+              "name": "punctuation.brackets.round.rux"
+            }
+          },
+          "match": "\\b(pub)(\\()"
+        },
+        {
+          "begin": "\\b(fn)\\s+((?:r#(?!crate|[Ss]elf|super))?[0-9A-Z_a-z]+)((\\()|(<))",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.fn.rux"
+            },
+            "2": {
+              "name": "entity.name.function.rux"
+            },
+            "4": {
+              "name": "punctuation.brackets.round.rux"
+            },
+            "5": {
+              "name": "punctuation.brackets.angle.rux"
+            }
+          },
+          "end": "(\\{)|(;)",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.brackets.curly.rux"
+            },
+            "2": {
+              "name": "punctuation.semi.rux"
+            }
+          },
+          "name": "meta.function.definition.rux",
+          "patterns": [
+            {
+              "include": "#block-comments"
+            },
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#keywords"
+            },
+            {
+              "include": "#lvariables"
+            },
+            {
+              "include": "#constants"
+            },
+            {
+              "include": "#gtypes"
+            },
+            {
+              "include": "#functions"
+            },
+            {
+              "include": "#lifetimes"
+            },
+            {
+              "include": "#macros"
+            },
+            {
+              "include": "#namespaces"
+            },
+            {
+              "include": "#punctuation"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#types"
+            },
+            {
+              "include": "#variables"
+            }
+          ]
+        },
+        {
+          "begin": "((?:r#(?!crate|[Ss]elf|super))?[0-9A-Z_a-z]+)(\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.rux"
+            },
+            "2": {
+              "name": "punctuation.brackets.round.rux"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.brackets.round.rux"
+            }
+          },
+          "name": "meta.function.call.rux",
+          "patterns": [
+            {
+              "include": "#block-comments"
+            },
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#attributes"
+            },
+            {
+              "include": "#keywords"
+            },
+            {
+              "include": "#lvariables"
+            },
+            {
+              "include": "#constants"
+            },
+            {
+              "include": "#gtypes"
+            },
+            {
+              "include": "#functions"
+            },
+            {
+              "include": "#lifetimes"
+            },
+            {
+              "include": "#macros"
+            },
+            {
+              "include": "#namespaces"
+            },
+            {
+              "include": "#punctuation"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#types"
+            },
+            {
+              "include": "#variables"
+            }
+          ]
+        },
+        {
+          "begin": "((?:r#(?!crate|[Ss]elf|super))?[0-9A-Z_a-z]+)(?=::<.*>\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.rux"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.brackets.round.rux"
+            }
+          },
+          "name": "meta.function.call.rux",
+          "patterns": [
+            {
+              "include": "#block-comments"
+            },
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#attributes"
+            },
+            {
+              "include": "#keywords"
+            },
+            {
+              "include": "#lvariables"
+            },
+            {
+              "include": "#constants"
+            },
+            {
+              "include": "#gtypes"
+            },
+            {
+              "include": "#functions"
+            },
+            {
+              "include": "#lifetimes"
+            },
+            {
+              "include": "#macros"
+            },
+            {
+              "include": "#namespaces"
+            },
+            {
+              "include": "#punctuation"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "include": "#types"
+            },
+            {
+              "include": "#variables"
+            }
+          ]
+        }
+      ]
+    },
+    "gtypes": {
+      "patterns": [
+        {
+          "match": "\\b(Some|None)\\b",
+          "name": "entity.name.type.option.rux"
+        },
+        {
+          "match": "\\b(Ok|Err)\\b",
+          "name": "entity.name.type.result.rux"
+        }
+      ]
+    },
+    "interpolations": {
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.interpolation.rux"
+        },
+        "2": {
+          "name": "punctuation.definition.interpolation.rux"
+        }
+      },
+      "match": "(\\{)[^\"{}]*(})",
+      "name": "meta.interpolation.rux"
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(await|break|continue|do|else|for|if|loop|match|return|try|while|yield)\\b",
+          "name": "keyword.control.rux"
+        },
+        {
+          "match": "\\b(extern|let|macro|mod)\\b",
+          "name": "keyword.other.rux storage.type.rux"
+        },
+        {
+          "match": "\\b(const)\\b",
+          "name": "storage.modifier.rux"
+        },
+        {
+          "match": "\\b(type)\\b",
+          "name": "keyword.declaration.type.rux storage.type.rux"
+        },
+        {
+          "match": "\\b(enum)\\b",
+          "name": "keyword.declaration.enum.rux storage.type.rux"
+        },
+        {
+          "match": "\\b(trait)\\b",
+          "name": "keyword.declaration.trait.rux storage.type.rux"
+        },
+        {
+          "match": "\\b(struct)\\b",
+          "name": "keyword.declaration.struct.rux storage.type.rux"
+        },
+        {
+          "match": "\\b(abstract|static)\\b",
+          "name": "storage.modifier.rux"
+        },
+        {
+          "match": "\\b(as|async|become|box|dyn|move|final|gen|impl|in|override|priv|pub|ref|typeof|union|unsafe|unsized|use|virtual|where)\\b",
+          "name": "keyword.other.rux"
+        },
+        {
+          "match": "\\bfn\\b",
+          "name": "keyword.other.fn.rux"
+        },
+        {
+          "match": "\\bcrate\\b",
+          "name": "keyword.other.crate.rux"
+        },
+        {
+          "match": "\\bmut\\b",
+          "name": "storage.modifier.mut.rux"
+        },
+        {
+          "match": "([\\^|]|\\|\\||&&|<<|>>|!)(?!=)",
+          "name": "keyword.operator.logical.rux"
+        },
+        {
+          "match": "&(?![\\&=])",
+          "name": "keyword.operator.borrow.and.rux"
+        },
+        {
+          "match": "((?:[-%\\&*+/^|]|<<|>>)=)",
+          "name": "keyword.operator.assignment.rux"
+        },
+        {
+          "match": "(?<![<>])=(?![=>])",
+          "name": "keyword.operator.assignment.equal.rux"
+        },
+        {
+          "match": "(=(=)?(?!>)|!=|<=|(?<!=)>=)",
+          "name": "keyword.operator.comparison.rux"
+        },
+        {
+          "match": "(([%+]|(\\*(?!\\w)))(?!=))|(-(?!>))|(/(?!/))",
+          "name": "keyword.operator.math.rux"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.brackets.round.rux"
+            },
+            "2": {
+              "name": "punctuation.brackets.square.rux"
+            },
+            "3": {
+              "name": "punctuation.brackets.curly.rux"
+            },
+            "4": {
+              "name": "keyword.operator.comparison.rux"
+            },
+            "5": {
+              "name": "punctuation.brackets.round.rux"
+            },
+            "6": {
+              "name": "punctuation.brackets.square.rux"
+            },
+            "7": {
+              "name": "punctuation.brackets.curly.rux"
+            }
+          },
+          "match": "(?:\\b|(?:(\\))|(])|(})))[\\t ]+([<>])[\\t ]+(?:\\b|(?:(\\()|(\\[)|(\\{)))"
+        },
+        {
+          "match": "::",
+          "name": "keyword.operator.namespace.rux"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.operator.dereference.rux"
+            }
+          },
+          "match": "(\\*)(?=\\w+)"
+        },
+        {
+          "match": "@",
+          "name": "keyword.operator.subpattern.rux"
+        },
+        {
+          "match": "\\.(?!\\.)",
+          "name": "keyword.operator.access.dot.rux"
+        },
+        {
+          "match": "\\.{2}([.=])?",
+          "name": "keyword.operator.range.rux"
+        },
+        {
+          "match": ":(?!:)",
+          "name": "keyword.operator.key-value.rux"
+        },
+        {
+          "match": "->|<-",
+          "name": "keyword.operator.arrow.skinny.rux"
+        },
+        {
+          "match": "=>",
+          "name": "keyword.operator.arrow.fat.rux"
+        },
+        {
+          "match": "\\$",
+          "name": "keyword.operator.macro.dollar.rux"
+        },
+        {
+          "match": "\\?",
+          "name": "keyword.operator.question.rux"
+        }
+      ]
+    },
+    "lifetimes": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.lifetime.rux"
+            },
+            "2": {
+              "name": "entity.name.type.lifetime.rux"
+            }
+          },
+          "match": "(')([A-Z_a-z][0-9A-Z_a-z]*)(?!')\\b"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.operator.borrow.rux"
+            },
+            "2": {
+              "name": "punctuation.definition.lifetime.rux"
+            },
+            "3": {
+              "name": "entity.name.type.lifetime.rux"
+            }
+          },
+          "match": "(&)(')([A-Z_a-z][0-9A-Z_a-z]*)(?!')\\b"
+        }
+      ]
+    },
+    "lvariables": {
+      "patterns": [
+        {
+          "match": "\\b[Ss]elf\\b",
+          "name": "variable.language.self.rux"
+        },
+        {
+          "match": "\\bsuper\\b",
+          "name": "variable.language.super.rux"
+        }
+      ]
+    },
+    "macros": {
+      "patterns": [
+        {
+          "captures": {
+            "2": {
+              "name": "entity.name.function.macro.rux"
+            },
+            "3": {
+              "name": "entity.name.type.macro.rux"
+            }
+          },
+          "match": "(([_a-z][0-9A-Z_a-z]*!)|([A-Z_][0-9A-Z_a-z]*!))",
+          "name": "meta.macro.rux"
+        }
+      ]
+    },
+    "namespaces": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.namespace.rux"
+            },
+            "2": {
+              "name": "keyword.operator.namespace.rux"
+            }
+          },
+          "match": "(?<![0-9A-Z_a-z])([0-9A-Z_a-z]+)((?<!s(?:uper|elf))::)"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "match": ",",
+          "name": "punctuation.comma.rux"
+        },
+        {
+          "match": "[{}]",
+          "name": "punctuation.brackets.curly.rux"
+        },
+        {
+          "match": "[()]",
+          "name": "punctuation.brackets.round.rux"
+        },
+        {
+          "match": ";",
+          "name": "punctuation.semi.rux"
+        },
+        {
+          "match": "[]\\[]",
+          "name": "punctuation.brackets.square.rux"
+        },
+        {
+          "match": "(?<!=)[<>]",
+          "name": "punctuation.brackets.angle.rux"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "(b?)(\")",
+          "beginCaptures": {
+            "1": {
+              "name": "string.quoted.byte.raw.rux"
+            },
+            "2": {
+              "name": "punctuation.definition.string.rux"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.rux"
+            }
+          },
+          "name": "string.quoted.double.rux",
+          "patterns": [
+            {
+              "include": "#escapes"
+            },
+            {
+              "include": "#interpolations"
+            }
+          ]
+        },
+        {
+          "begin": "(b?r)(#*)(\")",
+          "beginCaptures": {
+            "1": {
+              "name": "string.quoted.byte.raw.rux"
+            },
+            "2": {
+              "name": "punctuation.definition.string.raw.rux"
+            },
+            "3": {
+              "name": "punctuation.definition.string.rux"
+            }
+          },
+          "end": "(\")(\\2)",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.rux"
+            },
+            "2": {
+              "name": "punctuation.definition.string.raw.rux"
+            }
+          },
+          "name": "string.quoted.double.rux"
+        },
+        {
+          "begin": "(b)?(')",
+          "beginCaptures": {
+            "1": {
+              "name": "string.quoted.byte.raw.rux"
+            },
+            "2": {
+              "name": "punctuation.definition.char.rux"
+            }
+          },
+          "end": "'",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.char.rux"
+            }
+          },
+          "name": "string.quoted.single.char.rux",
+          "patterns": [
+            {
+              "include": "#escapes"
+            }
+          ]
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "captures": {
+            "1": {
+              "name": "entity.name.type.numeric.rux"
+            }
+          },
+          "match": "(?<![A-Za-z])(f32|f64|i128|i16|i32|i64|i8|isize|u128|u16|u32|u64|u8|usize)\\b"
+        },
+        {
+          "begin": "\\b(_?[A-Z][0-9A-Z_a-z]*)(<)",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.type.rux"
+            },
+            "2": {
+              "name": "punctuation.brackets.angle.rux"
+            }
+          },
+          "end": ">",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.brackets.angle.rux"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#block-comments"
+            },
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#keywords"
+            },
+            {
+              "include": "#lvariables"
+            },
+            {
+              "include": "#lifetimes"
+            },
+            {
+              "include": "#punctuation"
+            },
+            {
+              "include": "#types"
+            },
+            {
+              "include": "#variables"
+            }
+          ]
+        },
+        {
+          "match": "\\b(bool|char|str)\\b",
+          "name": "entity.name.type.primitive.rux"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.trait.rux storage.type.rux"
+            },
+            "2": {
+              "name": "entity.name.type.trait.rux"
+            }
+          },
+          "match": "\\b(trait)\\s+(_?[A-Z][0-9A-Z_a-z]*)\\b"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.struct.rux storage.type.rux"
+            },
+            "2": {
+              "name": "entity.name.type.struct.rux"
+            }
+          },
+          "match": "\\b(struct)\\s+(_?[A-Z][0-9A-Z_a-z]*)\\b"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.enum.rux storage.type.rux"
+            },
+            "2": {
+              "name": "entity.name.type.enum.rux"
+            }
+          },
+          "match": "\\b(enum)\\s+(_?[A-Z][0-9A-Z_a-z]*)\\b"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.type.rux storage.type.rux"
+            },
+            "2": {
+              "name": "entity.name.type.declaration.rux"
+            }
+          },
+          "match": "\\b(type)\\s+(_?[A-Z][0-9A-Z_a-z]*)\\b"
+        },
+        {
+          "match": "\\b_?[A-Z][0-9A-Z_a-z]*\\b(?!!)",
+          "name": "entity.name.type.rux"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "match": "\\b(?<!(?<!\\.)\\.)(?:r#(?!(crate|[Ss]elf|super)))?[0-9_a-z]+\\b",
+          "name": "variable.other.rux"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.rux"
+}

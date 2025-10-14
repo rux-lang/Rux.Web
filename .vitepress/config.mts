@@ -75,5 +75,24 @@ export default defineConfig({
       message: 'Released under the <a href="https://github.com/rux-lang/Rux/blob/main/LICENSE">MIT License</a>',
       copyright: 'Copyright © 2025 <a href="https://github.com/musicvano">Ivan Muzyka</a>',
     },
+  },
+
+  markdown: {
+    theme: {
+      light: 'min-light',
+      dark: 'min-dark'
+    },
+    languages: [
+      {
+        
+
+      }
+    ],
+    shikiSetup(shiki) {
+
+      //shiki.getBundledLanguages()
+      //shiki.loadTheme('andromeeda');
+      //shiki.setTheme('andromeeda');
+    },
   }
 })

@@ -73,6 +73,16 @@ head:
 
 ## Examples <Badge type="warning" text="dev" />
 
+```cpp
+// Returns the sum of numbers
+const char* LoadData(consyt char *fileName, int style)
+{
+    int a = 1;
+    bool flag = false;
+    return "Text from file";
+}
+```
+
 ```rux
 // Returns the sum of numbers
 func Add(x, y: int32): int32
