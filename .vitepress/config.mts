@@ -1,4 +1,12 @@
 import { defineConfig } from 'vitepress'
+import type { Highlighter } from 'shiki'
+import fs from 'fs'
+import path from 'path'
+
+
+const myLangPath = path.resolve(__dirname, 'shiki/rux.tmLanguage.json');
+const myLangGrammar = JSON.parse(fs.readFileSync(myLangPath, 'utf-8'));
+
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -82,17 +90,64 @@ export default defineConfig({
       light: 'min-light',
       dark: 'min-dark'
     },
-    languages: [
-      {
-        
 
-      }
-    ],
+    // languages: [
+    //   { id: 'rux', scopeName: 'source.rux', grammar: myLangGrammar, /*aliases: ['Rux', 'rux']*/ }
+    // ],
+
+
     shikiSetup(shiki) {
+      shiki.loadLanguageSync({
+        id: 'rux',
+        scopeName: 'source.rux',
+        grammar: myLangGrammar as any, // Cast is often necessary in TypeScript
+        name: 'rux',
+        
+        // You may need to add aliases here if you use them
+      });
+      let langs = shiki.getLoadedLanguages();      
+      console.log('Loaded languages:', langs);
+      let themes = shiki.getLoadedThemes();
+      console.log('Loaded themes:', themes);
 
-      //shiki.getBundledLanguages()
-      //shiki.loadTheme('andromeeda');
-      //shiki.setTheme('andromeeda');
+      var gr = shiki.getLanguage('rux');
+      //console.log('Rux grammar:', gr);
+
     },
+
+    // highlight: (code, lang) => {
+    //   console.log('Highlighting code:', { lang, code });
+    //   return null; // Use default highlighting
+    // },
+
+    //  shikiSetup(shiki) {
+    //   // Shiki's loadLanguage method takes the full grammar object.
+    //   shiki.loadLanguage({
+    //     id: 'rux',
+    //     scopeName: 'source.rux',
+    //     grammar: myLangGrammar as any, // Cast is often necessary in TypeScript
+    //     // You may need to add aliases here if you use them
+    //   });
+    // }
+
+    // shikiSetup: async (shiki: Highlighter) => {
+    //   // Load your grammar JSON
+    //   const grammarPath = path.resolve(__dirname, './shiki/rux.tmLanguage.json');
+    //   const grammar = JSON.parse(fs.readFileSync(grammarPath, 'utf-8'));
+    //   shiki.loadLanguage([
+    //     { id: 'rux', scopeName: 'source.rux', aliases: ['Rux', 'rux' ] }
+    //   ])
+
+
+    //   // Register your custom language
+    //   // If using Shiki v1.6.0+, use addGrammar; otherwise, update Shiki or use supported API
+    //   // @ts-ignore
+    //   // await shiki.addGrammar(grammar, {
+    //   //   scopeName: 'source.rux',
+    //   //   path: grammarPath
+    //   // });
+    //   // No need to call loadLanguage with a custom object; addGrammar is sufficient
+
+    // }
   }
 })

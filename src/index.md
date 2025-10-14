@@ -95,6 +95,25 @@ func Min<T>(x, y: T): T
 {
     return x < y ? x : y;
 }
+
+let a: i32 = 10;
+```
+
+```rux
+fn main() {
+    let a: i8 = 25;
+    // This is a comment.
+    // The main function is the entry point of the program.
+    println!("Hello, World!"); // Prints "Hello, World!" to the console.
+}
+```
+
+```rust
+fn main() {
+    // This is a comment.
+    let a: i8 = 25;
+    println!("Hello, World!"); // Prints "Hello, World!" to the console.
+}
 ```
 
 ## Let's create something amazing 
