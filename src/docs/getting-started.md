@@ -2,63 +2,29 @@
 outline: deep
 ---
 
-# Getting Started <Badge type="warning" text="dev" />
+# Getting Started
 
-<!-- This page demonstrates usage of some of the runtime APIs provided by VitePress.
+**Join the Rux journey — subscribe and shape the future of programming!**  
+We’re building something special at [rux-lang.dev](/): a language that’s expressive, elegant, and community-driven. If you’re curious about language design, creative tooling, or just want to be part of a vibrant dev movement, we’d love to have you onboard.
 
-> [!NOTE]
-> Highlights information that users should take into account, even when skimming.
+---
 
-> [!TIP]
-> Optional information to help a user be more successful.
+### ✨ Invitation to Collaborate and Subscribe
 
-> [!IMPORTANT]
-> Crucial information necessary for users to succeed.
+Hey there, fellow builder 👋
 
-> [!WARNING]
-> Critical content demanding immediate user attention due to potential risks.
+Rux is more than just a programming language — it’s a philosophy of clarity, creativity, and community. Whether you're a compiler nerd, syntax stylist, or just someone who loves clean code, Rux welcomes you.
 
-> [!CAUTION]
-> Negative potential consequences of an action.
+We’re currently shaping the core syntax, tooling, mascot integrations, and documentation pipelines — and your voice could help guide the next big leap.
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
+**Here’s how you can get involved:**
 
-```md
-<script setup>
-import { useData } from 'vitepress'
+- 📨 **Subscribe** on [X](https://x.com/ruxlang), [Bluesky](https://bsky.app/profile/ruxlang.bsky.social), [Mastodon](https://mastodon.social/@ruxlang) to get early updates, dev logs, and sneak peeks.
+- 💬 **Join the conversation** on [Discord](https://discord.com/invite/uvSHjtZSVG) or [GitHub Discussions](https://github.com/rux-lang/rux/discussions).
+- 🛠️ **Contribute ideas** — from grammar tweaks to mascot variants, we’re open to playful and technical input alike.
+- 🧠 **Discuss architecture** — compiler design, type systems, and extensibility are all on the table.
 
-const { theme, page, frontmatter } = useData()
-</script>
+Whether you want to help shape the syntax, test the tooling, or just vibe with Ruxi the mascot, we’d love to hear from you.
 
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-```
-
-<script setup>
-import { useData } from 'vitepress'
-
-const { site, theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### :100: Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata). -->
+Let’s build something beautiful together.  
+ **Subscribe, share, and start the conversation.** The future of Rux is yours to help define.

@@ -1,0 +1,419 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Rux",
+  "fileTypes": ["rx"],
+  "scopeName": "source.rux",
+  "patterns": [
+    {
+      "include": "#block-comments"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#punctuation"
+    },
+    {
+      "include": "#strings"
+    }
+  ],
+  "repository": {
+    "block-comments": {
+      "patterns": [
+        {
+          "comment": "Empty block comments",
+          "name": "comment.block.rux",
+          "match": "/\\*\\*/"
+        },
+        {
+          "comment": "Block documentation comments",
+          "name": "comment.block.documentation.rux",
+          "begin": "/\\*\\*",
+          "end": "\\*/",
+          "patterns": [
+            {
+              "include": "#block-comments"
+            }
+          ]
+        },
+        {
+          "comment": "Block comments",
+          "name": "comment.block.rux",
+          "begin": "/\\*(?!\\*)",
+          "end": "\\*/",
+          "patterns": [
+            {
+              "include": "#block-comments"
+            }
+          ]
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "comment": "Documentation comments",
+          "name": "comment.line.documentation.rux",
+          "match": "(///).*$",
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.comment.rux"
+            }
+          }
+        },
+        {
+          "comment": "Line comments",
+          "name": "comment.line.double-slash.rux",
+          "match": "(//).*$",
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.comment.rux"
+            }
+          }
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "comment": "Decimal integers and floats",
+          "name": "constant.numeric.decimal.rux",
+          "match": "\\b\\d[\\d_]*(\\.?)[\\d_]*(?:(E|e)([+-]?)([\\d_]+))?(float|float8|float16|float32|float80|float64|float128|float256|float512|int|int8|int16|int32|int64|int128|int256|int512|uint|uint8|uint16|uint32|uint64|uint128|uint256|uint512)?\\b",
+          "captures": {
+            "1": {
+              "name": "punctuation.separator.dot.decimal.rux"
+            },
+            "2": {
+              "name": "keyword.operator.exponent.rux"
+            },
+            "3": {
+              "name": "keyword.operator.exponent.sign.rux"
+            },
+            "4": {
+              "name": "constant.numeric.decimal.exponent.mantissa.rux"
+            },
+            "5": {
+              "name": "entity.name.type.numeric.rux"
+            }
+          }
+        },
+        {
+          "comment": "Hexadecimal integers",
+          "name": "constant.numeric.hex.rux",
+          "match": "\\b0x[\\da-fA-F_]+(int|int8|int16|int32|int64|int128|int256|int512|uint|uint8|uint16|uint32|uint64|ui128|uint256|uint512)?\\b",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.numeric.rux"
+            }
+          }
+        },
+        {
+          "comment": "Octal integers",
+          "name": "constant.numeric.oct.rux",
+          "match": "\\b0o[0-7_]+(int|int8|int16|int32|int64|int128|int256|int512|uint|uint8|uint16|uint32|uint64|uint128|uint256|uint512)?\\b",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.numeric.rux"
+            }
+          }
+        },
+        {
+          "comment": "Binary integers",
+          "name": "constant.numeric.bin.rux",
+          "match": "\\b0b[01_]+(int|int8|int16|int32|int64|int128|int256|int512|uint|uint8|uint16|uint32|uint64|uint128|uint256|uint512)?\\b",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.numeric.rux"
+            }
+          }
+        },
+        {
+          "comment": "Booleans",
+          "name": "constant.language.bool.rux",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "meta.function.definition.rux",
+          "begin": "\\bfunc\\b",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.other.rux"
+            }
+          },
+          "end": "(?<=\\})",
+          "patterns": [
+            {
+              "begin": "\\s+([a-zA-Z_][a-zA-Z0-9_]*)(\\()",
+              "beginCaptures": {
+                "1": {
+                  "name": "entity.name.function.rux"
+                },
+                "2": {
+                  "name": "punctuation.section.parameters.begin.rux"
+                }
+              },
+              "end": "\\)",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.parameters.end.rux"
+                }
+              },
+              "patterns": [
+                {
+                  "match": "([A-Za-z_][A-Za-z0-9_]*)(\\s*:\\s*)\\**(\\s*const)?\\s*([A-Za-z_][A-Za-z0-9_<>]*)",
+                  "captures": {
+                    "1": {
+                      "name": "variable.parameter.rux"
+                    },
+                    "2": {
+                      "name": "punctuation.separator.type.rux"
+                    },
+                    "3": {
+                      "name": "storage.modifier.rux"
+                    },
+                    "4": {
+                      "name": "entity.name.type.rux"
+                    }
+                  }
+                },
+                {
+                  "match": ",",
+                  "name": "punctuation.separator.parameter.rux"
+                },
+                {
+                  "include": "#constants"
+                },
+                {
+                  "include": "#types"
+                }
+              ]
+            },
+            {
+              "comment": "Return type",
+              "match": "\\s*:\\s*([A-Za-z_][A-Za-z0-9_<>]*)",
+              "captures": {
+                "1": {
+                  "name": "storage.type.return.rux"
+                }
+              }
+            },
+            {
+              "comment": "Function body",
+              "name": "meta.block.rux",
+              "begin": "\\{",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.block.begin.rux"
+                }
+              },
+              "end": "\\}",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.block.end.rux"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#block-comments"
+                },
+                {
+                  "include": "#comments"
+                },
+                {
+                  "include": "#constants"
+                },
+                {
+                  "include": "#keywords"
+                },
+                {
+                  "include": "#punctuation"
+                },
+                {
+                  "include": "#strings"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "comment": "Control flow keywords",
+          "name": "keyword.control.rux",
+          "match": "\\b(await|break|continue|do|else|for|if|loop|match|return|try|while|yield)\\b"
+        },
+        {
+          "comment": "Storage modifier",
+          "name": "storage.modifier.rux",
+          "match": "\\b(const|let|var|use|as)\\b"
+        },
+        {
+          "comment": "Class keyword",
+          "name": "keyword.declaration.class.rux storage.type.rux",
+          "match": "\\b(class)\\b"
+        },
+        {
+          "comment": "Enum keyword",
+          "name": "keyword.declaration.enum.rux storage.type.rux",
+          "match": "\\b(enum)\\b"
+        },
+        {
+          "comment": "Struct keyword",
+          "name": "keyword.declaration.struct.rux storage.type.rux",
+          "match": "\\b(struct)\\b"
+        },
+        {
+          "comment": "logical operators",
+          "name": "keyword.operator.logical.rust",
+          "match": "(\\^|\\||\\|\\||&&|<<|>>|!)(?!=)"
+        },
+        {
+          "comment": "Other keywords",
+          "name": "keyword.other.rux",
+          "match": "\\b(as|async|use)\\b"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "comment": "Comma",
+          "match": ",",
+          "name": "punctuation.separator.parameter.rux"
+        },
+        {
+          "comment": "Dot",
+          "match": "\\.",
+          "name": "punctuation.accessor.dot.rux"
+        },
+        {
+          "comment": "Colon",
+          "match": ":",
+          "name": "punctuation.separator.type.rux"
+        },
+        {
+          "comment": "Semicolon",
+          "match": ";",
+          "name": "punctuation.terminator.statement.rux"
+        },
+        {
+          "comment": "Open square bracket",
+          "name": "punctuation.section.brackets.begin.rux",
+          "match": "\\["
+        },
+        {
+          "comment": "Close square bracket",
+          "name": "punctuation.section.brackets.end.rux",
+          "match": "\\]"
+        },
+        {
+          "comment": "Open parenthesis",
+          "match": "\\(",
+          "name": "punctuation.section.parameters.begin.rux"
+        },
+        {
+          "comment": "Cloase parenthesis",
+          "match": "\\)",
+          "name": "punctuation.section.parameters.end.rux"
+        },
+        {
+          "comment": "Open curly brace",
+          "match": "\\{",
+          "name": "punctuation.section.block.begin.rux"
+        },
+        {
+          "comment": "Close curly brace",
+          "match": "\\}",
+          "name": "punctuation.section.block.end.rux"
+        },
+        {
+          "comment": "Open angle bracket",
+          "match": "<",
+          "name": "punctuation.definition.generic.begin.rux"
+        },
+        {
+          "comment": "Close angle bracket",
+          "match": ">",
+          "name": "punctuation.definition.generic.end.rux"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.rux",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.rux",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "comment": "Integer types",
+          "name": "entity.name.type.int.rux",
+          "match": "\\b(int|int8|int16|int32|int64|int128|int256|int512|uint|uint8|uint16|uint32|uint64|uint128|uint256|uint512)\\b"
+        },
+        {
+          "comment": "Float types",
+          "name": "entity.name.type.float.rux",
+          "match": "\\b(float|float8|float16|float32|float64|float80|float128|float256|float512)\\b"
+        },
+        {
+          "comment": "Character types",
+          "name": "entity.name.type.char.rux",
+          "match": "\\b(char|char8|char16|char32|char64|char128|char256|char512)\\b"
+        },
+        {
+          "comment": "Boolean types",
+          "name": "entity.name.type.bool.rux",
+          "match": "\\b(bool|bool8|bool16|bool32|bool64|bool128|bool256|bool512)\\b"
+        },
+        {
+          "comment": "Struct declarations",
+          "match": "\\b(struct)\\s+(_?[A-Z][A-Za-z0-9_]*)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.struct.rux storage.type.rux"
+            },
+            "2": {
+              "name": "entity.name.type.struct.rux"
+            }
+          }
+        },
+        {
+          "comment": "Enum declarations",
+          "match": "\\b(enum)\\s+([A-Za-z0-9_]*)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.declaration.enum.rux storage.type.rux"
+            },
+            "2": {
+              "name": "entity.name.type.enum.rux"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
