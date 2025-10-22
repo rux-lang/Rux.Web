@@ -8,7 +8,7 @@ hero:
   text: Programming Language
   image:
     src: /images/mascot.webp
-    alt: Rux logo
+    alt: Rux mascot
   tagline: Fast, compiled, strongly typed, multi-paradigm, general-purpose
   actions:
     - theme: brand
