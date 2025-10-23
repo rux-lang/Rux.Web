@@ -1,4 +1,11 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  --vp-font-family-mono: "Fira Code", "JetBrains Mono", ui-monospace, "Menlo", "Monaco",
-    "Consolas", "Liberation Mono", "Courier New", monospace;
+  --vp-font-family-mono: "JetBrains Mono", "Fira Code", ui-monospace, "Menlo",
+    "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
 }
