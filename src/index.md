@@ -161,9 +161,9 @@ Size depends on CPU architecture to provide the best performance
 ```rux
 let value: int;     // 4 or 8 bytes
 let value: uint;    // 4 or 8 bytes
-let value: float;   // 8 bytes
+let value: float;   // 4 or 8 bytes
 let value: bool;    // 1 byte
-let value: char;    // 1 or 4 bytes
+let value: char;    // 1, 2 or 4 bytes
 ```
 
 ### Support Unicode strings
@@ -180,7 +180,7 @@ let message = "Привет мир";
 let message = "Olá Mundo";
 let message = "سلام دنیا";
 let message = "Привіт світ";
-let animals = "🪼🦀🦊🐑🐟"
+let animals = "🐯🐶🐱🐭"
 ```
 
 ### Control mutability
