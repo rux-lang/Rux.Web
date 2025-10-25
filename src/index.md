@@ -83,10 +83,6 @@ head:
   - - meta
     - name: twitter:image
       content: https://rux-lang.dev/images/rux-social-wide.jpg
-  - - link
-    - rel: icon
-      type: image/svg
-      href: logo.svg
 ---
 
 ## Examples
@@ -227,8 +223,10 @@ use Math::Sin;
 use Math:Sin as Sinf;
 ```
 
-## Let's create something amazing 🪄
+## Community
 
-::: tip
-🚧 Rux compiler, documentation, and this site are under construction 🏗️.
-:::
+Subscribe on [X](https://x.com/ruxlang), [Bluesky](https://bsky.app/profile/ruxlang.bsky.social), [Mastodon](https://mastodon.social/@ruxlang), [Telegram](https://t.me/ruxlang) to get early updates, dev logs, and sneak peeks. Join the conversation on [Discord](https://discord.com/invite/uvSHjtZSVG) or [GitHub Discussions](https://github.com/rux-lang/rux/discussions). We’d love to hear from you! Not sure where to ask your question or how to get involved? Our community team is here to give you the right answer and help you get started.
+
+## Project Status
+
+🚧 Rux compiler, documentation, and this site are under construction 🏗️. Let's create something amazing!

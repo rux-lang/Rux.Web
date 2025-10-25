@@ -19,7 +19,7 @@ We’re currently shaping the core syntax, tooling, mascot integrations, and doc
 
 **Here’s how you can get involved:**
 
-- 📨 **Subscribe** on [X](https://x.com/ruxlang), [Bluesky](https://bsky.app/profile/ruxlang.bsky.social), [Mastodon](https://mastodon.social/@ruxlang) to get early updates, dev logs, and sneak peeks.
+- 📨 **Subscribe** on [X](https://x.com/ruxlang), [Bluesky](https://bsky.app/profile/ruxlang.bsky.social), [Mastodon](https://mastodon.social/@ruxlang), [Telegram](https://t.me/ruxlang) to get early updates, dev logs, and sneak peeks.
 - 💬 **Join the conversation** on [Discord](https://discord.com/invite/uvSHjtZSVG) or [GitHub Discussions](https://github.com/rux-lang/rux/discussions).
 - 🛠️ **Contribute ideas** — from grammar tweaks to mascot variants, we’re open to playful and technical input alike.
 - 🧠 **Discuss architecture** — compiler design, type systems, and extensibility are all on the table.

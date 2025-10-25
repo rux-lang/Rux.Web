@@ -27,6 +27,16 @@ export default defineConfig({
   },
 
   head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
+    ["link", { rel: "icon", href: "/favicon.ico", sizes: "any" }],
+    [
+      "link",
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
+    ],
     [
       "script",
       {
@@ -37,8 +47,8 @@ export default defineConfig({
     ],
   ],
 
+  // https://vitepress.dev/reference/default-theme-config
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     logo: "/logo.svg",
     siteTitle: "Rux",
 
@@ -68,7 +78,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/rux-lang/Rux",
+        link: "https://github.com/rux-lang",
         ariaLabel: "GitHub",
       },
       { icon: "x", link: "https://x.com/ruxlang", ariaLabel: "X" },
@@ -81,6 +91,11 @@ export default defineConfig({
         icon: "mastodon",
         link: "https://mastodon.social/@ruxlang",
         ariaLabel: "Mastodon",
+      },
+      {
+        icon: "telegram",
+        link: "https://t.me/ruxlang",
+        ariaLabel: "Telegram",
       },
       {
         icon: "discord",
