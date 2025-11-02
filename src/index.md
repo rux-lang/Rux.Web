@@ -7,7 +7,7 @@ hero:
   name: Rux
   text: Programming Language
   image:
-    src: /images/mascot.webp
+    src: /images/mascot.svg
     alt: Rux mascot
   tagline: Fast, compiled, strongly typed, multi-paradigm, general-purpose
   actions:
@@ -33,7 +33,7 @@ features:
     title: Safety Without Sacrifice
     details: Memory safety is built-in, not bolted on. Rux distinguishes references (&T) and pointers (*T) clearly, allowing both safe high-level code and low-level control. Unlike C++, you don’t need manual discipline.
   - icon:
-      src: /icons/rocket.svg
+      src: /icons/dna.svg
     title: Multi-Paradigm by Design
     details: Rux blends procedural, functional, and object-oriented paradigms seamlessly. You can write clean imperative code, use higher-order functions, or design modular, data-driven systems — all with zero runtime overhead.
   - icon:
@@ -237,4 +237,4 @@ Subscribe on [Bluesky](https://bsky.app/profile/ruxlang.bsky.social), [X](https:
 
 ## Project Status
 
-🚧 Rux compiler, documentation, and this site are under construction 🏗️.
+Rux compiler, documentation, and this site are under construction 🏗️.

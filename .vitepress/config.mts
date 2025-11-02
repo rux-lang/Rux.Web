@@ -56,7 +56,7 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "Docs", link: "/docs/introduction" },
       { text: "Packages", link: "/packages" },
-      { text: "Blog", link: "/blog/getting-started" },
+      //{ text: "Blog", link: "/blog/getting-started" },
       { text: "FAQ", link: "/faq" },
       {
         text: "Changelog",
@@ -93,7 +93,7 @@ export default defineConfig({
       },
       {
         icon: "bluesky",
-        link: "https://bsky.app/profile/ruxlang.bsky.social",
+        link: "https://ruxlang.bsky.social",
         ariaLabel: "Bluesky",
       },
       { icon: "x", link: "https://x.com/ruxlang", ariaLabel: "X" },
