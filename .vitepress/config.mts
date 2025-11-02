@@ -12,7 +12,7 @@ const ruxGrammar = JSON.parse(
   )
 );
 // Set aliases for the Rux grammar
-ruxGrammar.aliases = ["rux"];
+ruxGrammar.aliases = ["rux", "rx"];
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -56,6 +56,7 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "Docs", link: "/docs/introduction" },
       { text: "Packages", link: "/packages" },
+      { text: "Blog", link: "/blog/getting-started" },
       { text: "FAQ", link: "/faq" },
       {
         text: "Changelog",
@@ -63,17 +64,26 @@ export default defineConfig({
       },
     ],
 
-    sidebar: [
-      {
-        text: "Reference",
-        collapsed: false,
-        items: [
-          { text: "Introduction", link: "/docs/introduction" },
-          { text: "Getting Started", link: "/docs/getting-started" },
-          { text: "Primitive types", link: "/docs/primitive-types" },
-        ],
-      },
-    ],
+    sidebar: {
+      "/docs/": [
+        {
+          text: "Reference",
+          collapsed: false,
+          items: [
+            { text: "Introduction", link: "/docs/introduction" },
+            { text: "Getting Started", link: "/docs/getting-started" },
+            { text: "Primitive types", link: "/docs/primitive-types" },
+          ],
+        },
+      ],
+      "/blog/": [
+        {
+          text: "2025",
+          collapsed: false,
+          items: [{ text: "Getting Started", link: "/blog/getting-started" }],
+        },
+      ],
+    },
 
     socialLinks: [
       {
@@ -81,12 +91,12 @@ export default defineConfig({
         link: "https://github.com/rux-lang",
         ariaLabel: "GitHub",
       },
-      { icon: "x", link: "https://x.com/ruxlang", ariaLabel: "X" },
       {
         icon: "bluesky",
         link: "https://bsky.app/profile/ruxlang.bsky.social",
         ariaLabel: "Bluesky",
       },
+      { icon: "x", link: "https://x.com/ruxlang", ariaLabel: "X" },
       {
         icon: "mastodon",
         link: "https://mastodon.social/@ruxlang",
@@ -104,7 +114,7 @@ export default defineConfig({
       },
       {
         icon: {
-          svg: '<svg role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-icon lucide-message-square"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg>',
+          svg: '<svg role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg>',
         },
         link: "https://github.com/rux-lang/Rux/discussions",
         ariaLabel: "Discussions",

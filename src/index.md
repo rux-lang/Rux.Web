@@ -20,28 +20,36 @@ hero:
 
 # Features section
 features:
-  - icon: ⚡️
+  - icon:
+      src: /icons/rocket.svg
     title: Compiled for Speed
     details: Rux compiles directly to native machine code using optimizations. No virtual machine, no interpreter, no runtime surprises — just raw performance. Rux generates binaries like C, C++, Rust, Zig.
-  - icon: 📐
+  - icon:
+      src: /icons/block.svg
     title: Strongly Typed
     details: No implicit conversions, no hidden boxing, no “maybe copy”. Rux’s type system ensures correctness without verbosity — similar to Rust’s safety, but with a cleaner syntax and simpler rules.
-  - icon: 🛡️
+  - icon:
+      src: /icons/shield.svg
     title: Safety Without Sacrifice
     details: Memory safety is built-in, not bolted on. Rux distinguishes references (&T) and pointers (*T) clearly, allowing both safe high-level code and low-level control. Unlike C++, you don’t need manual discipline.
-  - icon: 🧬
+  - icon:
+      src: /icons/rocket.svg
     title: Multi-Paradigm by Design
     details: Rux blends procedural, functional, and object-oriented paradigms seamlessly. You can write clean imperative code, use higher-order functions, or design modular, data-driven systems — all with zero runtime overhead.
-  - icon: 🛠️
+  - icon:
+      src: /icons/binary.svg
     title: Low-Level Control
     details: When you care about bytes and cycles, Rux gives you direct access. Explicit memory layout, fixed-width data types, and pointer arithmetic when needed. Like Zig or C, but with strong typing and clear mutability rules.
-  - icon: 🧩
+  - icon:
+      src: /icons/code.svg
     title: Simple Syntax
     details: Rux’s syntax is minimal yet expressive — designed to read like pseudocode and compile like assembly. No clutter, no hidden conversions, no unnecessary ceremony. Readable, concise, and fully type-safe.
-  - icon: 🚀
+  - icon:
+      src: /icons/fast.svg
     title: Fast Compilation and Tooling
     details: Nobody likes waiting on builds. Rux features an incremental compiler with near-instant rebuilds and dependency-free binaries. You get Go-like build speed with Rust-like optimization quality — the best of both worlds.
-  - icon: 🔁
+  - icon:
+      src: /icons/platform.svg
     title: Cross-Platform
     details: Rux isn’t just for systems programming. It’s equally comfortable writing CLI tools, servers, games, or libraries. Compile to Windows, Linux, macOS, and more — all from the same clean source code.
 
@@ -91,7 +99,7 @@ head:
 
 #### Signed integer types
 
-```rux
+```rx
 let value: int8;    // 1 byte
 let value: int16;   // 2 bytes
 let value: int32;   // 4 bytes
@@ -103,7 +111,7 @@ let value: int512;  // 64 bytes
 
 #### Unsigned integer types
 
-```rux
+```rx
 let value: uint8;    // 1 byte
 let value: uint16;   // 2 bytes
 let value: uint32;   // 4 bytes
@@ -115,7 +123,7 @@ let value: uint512;  // 64 bytes
 
 #### Floating-point types
 
-```rux
+```rx
 let value: float8;    // 1 byte
 let value: float16;   // 2 bytes
 let value: float32;   // 4 bytes
@@ -128,7 +136,7 @@ let value: float512;  // 64 bytes
 
 #### Boolean types
 
-```rux
+```rx
 let value: bool8;    // 1 byte
 let value: bool16;   // 2 bytes
 let value: bool32;   // 4 bytes
@@ -140,7 +148,7 @@ let value: bool512;  // 64 bytes
 
 #### Character types
 
-```rux
+```rx
 let value: char8;    // 1 byte
 let value: char16;   // 2 bytes
 let value: char32;   // 4 bytes
@@ -154,7 +162,7 @@ let value: char512;  // 64 bytes
 
 Size depends on CPU architecture to provide the best performance
 
-```rux
+```rx
 let value: int;     // 4 or 8 bytes
 let value: uint;    // 4 or 8 bytes
 let value: float;   // 4 or 8 bytes
@@ -164,7 +172,7 @@ let value: char;    // 1, 2 or 4 bytes
 
 ### Support Unicode strings
 
-```rux
+```rx
 let message = "Hello World";
 let message = "你好，世界";
 let message = "नमस्ते दुनिया";
@@ -181,7 +189,7 @@ let animals = "🐯🐶🐱🐭"
 
 ### Control mutability
 
-```rux
+```rx
 var value: int = 10;
 let value: int = 20;
 const value: int = 30;
@@ -189,7 +197,7 @@ const value: int = 30;
 
 ### Functions
 
-```rux
+```rx
 // Regular function
 func Add(x, y: int32): int32
 {
@@ -205,7 +213,7 @@ func Min<T>(x, y: T): T
 
 ### Raw pointers 🤯
 
-```rux
+```rx
 var ptr: **char;
 var ptr: *const char
 const ptr: *char;
@@ -215,7 +223,7 @@ var data: *int64;
 
 ### Module system
 
-```rux
+```rx
 // Import from modules
 use Math;
 use Math:*;
@@ -225,8 +233,8 @@ use Math:Sin as Sinf;
 
 ## Community
 
-Subscribe on [X](https://x.com/ruxlang), [Bluesky](https://bsky.app/profile/ruxlang.bsky.social), [Mastodon](https://mastodon.social/@ruxlang), [Telegram](https://t.me/ruxlang) to get early updates, dev logs, and sneak peeks. Join the conversation on [Discord](https://discord.com/invite/uvSHjtZSVG) or [GitHub Discussions](https://github.com/rux-lang/rux/discussions). We’d love to hear from you! Not sure where to ask your question or how to get involved? Our community team is here to give you the right answer and help you get started.
+Subscribe on [Bluesky](https://bsky.app/profile/ruxlang.bsky.social), [X](https://x.com/ruxlang), [Mastodon](https://mastodon.social/@ruxlang), [Telegram](https://t.me/ruxlang) to get early updates, dev logs, and sneak peeks. Join the conversation on [Discord](https://discord.com/invite/uvSHjtZSVG) or [GitHub Discussions](https://github.com/rux-lang/rux/discussions). We’d love to hear from you! Not sure where to ask your question or how to get involved? Our community team is here to give you the right answer and help you get started.
 
 ## Project Status
 
-🚧 Rux compiler, documentation, and this site are under construction 🏗️. Let's create something amazing!
+🚧 Rux compiler, documentation, and this site are under construction 🏗️.
