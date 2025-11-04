@@ -86,12 +86,12 @@ export default defineConfig({
         link: "https://github.com/rux-lang",
         ariaLabel: "GitHub",
       },
+      { icon: "x", link: "https://x.com/ruxlang", ariaLabel: "X" },
       {
         icon: "bluesky",
         link: "https://ruxlang.bsky.social",
         ariaLabel: "Bluesky",
       },
-      { icon: "x", link: "https://x.com/ruxlang", ariaLabel: "X" },
       {
         icon: "mastodon",
         link: "https://mastodon.social/@ruxlang",
@@ -102,6 +102,11 @@ export default defineConfig({
         link: "https://t.me/ruxlang",
         ariaLabel: "Telegram",
       },
+      /*{
+        icon: "reddit",
+        link: "https://www.reddit.com/r/ruxlang/",
+        ariaLabel: "Reddit",
+      },*/
       {
         icon: "discord",
         link: "https://discord.com/invite/uvSHjtZSVG",
@@ -109,7 +114,7 @@ export default defineConfig({
       },
       {
         icon: {
-          svg: '<svg role="img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></svg>',
+          svg: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path stroke="none" d="M19.2,1.2c2.65,0,4.8,2.15,4.8,4.8v9.6c0,2.65-2.15,4.8-4.8,4.8h-3.1l-3.25,3.25c-.43.43-1.11.47-1.58.1l-.11-.1-3.25-3.25h-3.1c-2.56,0-4.67-2.01-4.79-4.56v-.24s0-9.6,0-9.6C0,3.35,2.15,1.2,4.8,1.2h14.4ZM14.4,12h-7.2c-.66,0-1.2.54-1.2,1.2s.54,1.2,1.2,1.2h7.2c.66,0,1.2-.54,1.2-1.2s-.54-1.2-1.2-1.2M16.8,7.2H7.2c-.66,0-1.2.54-1.2,1.2s.54,1.2,1.2,1.2h9.6c.66,0,1.2-.54,1.2-1.2s-.54-1.2-1.2-1.2" /></svg>',
         },
         link: "https://github.com/rux-lang/Rux/discussions",
         ariaLabel: "Discussions",
