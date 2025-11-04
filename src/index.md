@@ -226,9 +226,9 @@ var data: *int64;
 ```rux
 // Import from modules
 use Math;
-use Math:*;
+use Math::*;
 use Math::Sin;
-use Math:Sin as Sinf;
+use Math::Sin as Sinf;
 ```
 
 ## Community
