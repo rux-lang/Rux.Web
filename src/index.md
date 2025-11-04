@@ -99,7 +99,7 @@ head:
 
 #### Signed integer types
 
-```rx
+```rux
 let value: int8;    // 1 byte
 let value: int16;   // 2 bytes
 let value: int32;   // 4 bytes
@@ -111,7 +111,7 @@ let value: int512;  // 64 bytes
 
 #### Unsigned integer types
 
-```rx
+```rux
 let value: uint8;    // 1 byte
 let value: uint16;   // 2 bytes
 let value: uint32;   // 4 bytes
@@ -123,7 +123,7 @@ let value: uint512;  // 64 bytes
 
 #### Floating-point types
 
-```rx
+```rux
 let value: float8;    // 1 byte
 let value: float16;   // 2 bytes
 let value: float32;   // 4 bytes
@@ -136,7 +136,7 @@ let value: float512;  // 64 bytes
 
 #### Boolean types
 
-```rx
+```rux
 let value: bool8;    // 1 byte
 let value: bool16;   // 2 bytes
 let value: bool32;   // 4 bytes
@@ -148,7 +148,7 @@ let value: bool512;  // 64 bytes
 
 #### Character types
 
-```rx
+```rux
 let value: char8;    // 1 byte
 let value: char16;   // 2 bytes
 let value: char32;   // 4 bytes
@@ -162,7 +162,7 @@ let value: char512;  // 64 bytes
 
 Size depends on CPU architecture to provide the best performance
 
-```rx
+```rux
 let value: int;     // 4 or 8 bytes
 let value: uint;    // 4 or 8 bytes
 let value: float;   // 4 or 8 bytes
@@ -172,7 +172,7 @@ let value: char;    // 1, 2 or 4 bytes
 
 ### Support Unicode strings
 
-```rx
+```rux
 let message = "Hello World";
 let message = "你好，世界";
 let message = "नमस्ते दुनिया";
@@ -189,7 +189,7 @@ let animals = "🐯🐶🐱🐭"
 
 ### Control mutability
 
-```rx
+```rux
 var value: int = 10;
 let value: int = 20;
 const value: int = 30;
@@ -197,7 +197,7 @@ const value: int = 30;
 
 ### Functions
 
-```rx
+```rux
 // Regular function
 func Add(x, y: int32): int32
 {
@@ -213,7 +213,7 @@ func Min<T>(x, y: T): T
 
 ### Raw pointers 🤯
 
-```rx
+```rux
 var ptr: **char;
 var ptr: *const char
 const ptr: *char;
@@ -223,7 +223,7 @@ var data: *int64;
 
 ### Module system
 
-```rx
+```rux
 // Import from modules
 use Math;
 use Math:*;

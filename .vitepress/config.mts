@@ -4,15 +4,12 @@ import { fileURLToPath } from "url";
 import path from "path";
 
 // Load Rux grammar for syntax highlighting
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ruxGrammar = JSON.parse(
-  readFileSync(
-    path.resolve(__dirname, "./grammars/rux.tmLanguage.json"),
-    "utf-8"
-  )
-);
+const dirname = path.dirname(fileURLToPath(import.meta.url));
+const filename = path.resolve(dirname, "./grammars/rux.tmLanguage.json");
+const ruxGrammar = JSON.parse(readFileSync(filename, "utf-8"));
+
 // Set aliases for the Rux grammar
-ruxGrammar.aliases = ["rux", "rx"];
+ruxGrammar.aliases = ["rux"];
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -22,9 +19,7 @@ export default defineConfig({
   srcDir: "./src",
   cleanUrls: true,
   lastUpdated: true,
-  sitemap: {
-    hostname: "https://rux-lang.dev",
-  },
+  sitemap: { hostname: "https://rux-lang.dev" },
 
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
