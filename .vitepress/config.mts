@@ -1,8 +1,4 @@
 import { defineConfig } from "vitepress";
-import {
-  groupIconMdPlugin,
-  groupIconVitePlugin,
-} from "vitepress-plugin-group-icons";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -160,11 +156,6 @@ export default defineConfig({
         link: "https://t.me/ruxlang",
         ariaLabel: "Telegram",
       },
-      /*{
-        icon: "reddit",
-        link: "https://www.reddit.com/r/ruxlang/",
-        ariaLabel: "Reddit",
-      },*/
       {
         icon: "discord",
         link: "https://discord.com/invite/uvSHjtZSVG",
@@ -203,30 +194,11 @@ export default defineConfig({
   },
 
   markdown: {
-    config(md) {
-      md.use(groupIconMdPlugin);
-    },
     math: true,
     theme: {
       light: "github-light",
       dark: "github-dark",
     },
     languages: [ruxGrammar],
-  },
-
-  vite: {
-    plugins: [
-      groupIconVitePlugin({
-        customIcon: {
-          c: "vscode-icons:file-type-c2",
-          "c++": "vscode-icons:file-type-cpp3",
-          "c#": "vscode-icons:file-type-csharp2",
-          go: "vscode-icons:file-type-go",
-          java: "vscode-icons:file-type-java",
-          rust: "vscode-icons:file-type-rust",
-          rux: "https://rux-lang.dev/logo.svg",
-        },
-      }),
-    ],
   },
 });
