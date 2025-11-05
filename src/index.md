@@ -13,10 +13,10 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /docs/getting-started
+      link: /docs/overview
     - theme: alt
-      text: GitHub
-      link: https://github.com/rux-lang/Rux
+      text: Tutorials
+      link: /tutorials/overview
 
 # Features section
 features:

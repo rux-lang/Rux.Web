@@ -1,4 +1,4 @@
-# Rux.toml — Manifest Specification
+# Manifest Specification
 
 **Version:** Draft 0.1.0 (November 2025)  
 **Applies to:** Rux ≥0.1.0  
@@ -6,7 +6,7 @@
 **Format:** [TOML v1.0.0](https://toml.io/en/)  
 **Convention:** PascalCase keys (case-sensitive parsing)
 
-## 1. Overview
+## Overview
 
 The `Rux.toml` file defines metadata, build configuration, and dependency information for a Rux project. It is required in every Rux project directory that participates in the build system or workspace.
 
@@ -20,13 +20,13 @@ Description = "Example Rux project"
 
 The file must be encoded in **UTF-8** and adhere to **TOML 1.0.0** syntax.
 
-## 2. Conventions
+## Conventions
 
 - All keys and tables use **PascalCase** by convention.
 - Parsing is **case-sensitive**, but Rux tools (`rux`, `rux fmt`) will emit PascalCase when writing manifests.
 - Unrecognized fields must be ignored with a warning (to allow forward compatibility).
 
-## 3. `[Package]` Section
+## `[Package]` Section
 
 Defines project metadata and packaging details.
 
@@ -61,7 +61,7 @@ Categories = ["cli"]
 | `Keywords`    | array of strings | ❌       | Search keywords                                              |
 | `Categories`  | array of strings | ❌       | Registry categories                                          |
 
-## 4. `[Build]` Section
+## `[Build]` Section
 
 Specifies build parameters and compiler options.
 
@@ -84,7 +84,7 @@ Flags = ["--warn-unused", "--color=always"]
 | `EmitIr`   | bool             | Whether to emit intermediate representation.             |
 | `Flags`    | array of strings | Extra flags passed to the compiler.                      |
 
-## 5. `[Dependencies]` Sections
+## `[Dependencies]` Sections
 
 Defines packages this project depends on.  
 Rux supports several dependency tables:
@@ -125,7 +125,7 @@ CC = "1.2"
 | `Path`    | Local relative path        |
 | `Source`  | Custom registry or Git URL |
 
-## 6. `[Features]` Section
+## `[Features]` Section
 
 Defines named feature sets for conditional compilation.
 
@@ -139,7 +139,7 @@ CLI = []
 - `Default` specifies features automatically enabled when none are given.
 - Other features list dependencies or nested features.
 
-## 7. `[Scripts]` Section
+## `[Scripts]` Section
 
 Defines user-defined commands for build automation.
 
@@ -153,12 +153,12 @@ Fmt = "rux fmt"
 Scripts can be executed via:
 
 ```bash
-rux run Build
-rux run Test
-rux run Fmt
+rux script Build
+rux script Test
+rux script Fmt
 ```
 
-## 8. `[Workspace]` Section
+## `[Workspace]` Section
 
 Groups multiple Rux packages under one workspace.
 
@@ -173,7 +173,7 @@ Members = ["Core", "CLI", "Utils"]
 | --------- | ---------------- | ---------------------------------- |
 | `Members` | array of strings | Relative paths to member packages. |
 
-## 9. `[Tool.*]` Sections
+## `[Tool.*]` Sections
 
 Used for third-party or internal tool configuration.
 
@@ -187,7 +187,7 @@ IndentWidth = 4
 Each tool defines its own schema.  
 Tools should use `Tool.<ToolName>` with PascalCase.
 
-## 10. `Rux.lock`
+## `Rux.lock`
 
 When dependency resolution occurs, the build system creates `Rux.lock` beside the manifest.
 
@@ -209,7 +209,7 @@ Checksum = "ab2cc1c..."
 
 This file must not be manually edited.
 
-## 11. Grammar Summary
+## Grammar Summary
 
 ### Table naming
 
@@ -233,7 +233,7 @@ This file must not be manually edited.
 - Strings: `"..."` UTF-8 quoted strings.
 - Comments: `#` (same as TOML).
 
-## 12. Example Full Manifest
+## Example Full Manifest
 
 ```toml
 [Package]
@@ -270,7 +270,7 @@ IndentStyle = "Space"
 IndentWidth = 4
 ```
 
-## 13. Future Extensions
+## Future Extensions
 
 Planned sections:
 

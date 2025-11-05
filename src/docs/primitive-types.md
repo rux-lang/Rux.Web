@@ -50,7 +50,7 @@ The Rux compiler recognize such primitive data types.
 | `bool256` | 32 bytes | `false` or `true` |
 | `bool512` | 64 bytes | `false` or `true` |
 
-`false` is equal to 0, `true` is any value, non zero
+`false` is equal to 0, `true` is equal to 1
 
 ## Character types
 

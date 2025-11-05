@@ -49,9 +49,17 @@ export default defineConfig({
 
     nav: [
       { text: "Home", link: "/" },
-      { text: "Docs", link: "/docs/introduction" },
+      {
+        text: "Reference",
+        items: [
+          { text: "Rux Reference", link: "/docs/overview" },
+          { text: "API Reference", link: "/api/overview" },
+          { text: "CLI Reference", link: "/cli/overview" },
+        ],
+      },
+      { text: "Tutorials", link: "/tutorials/overview" },
       { text: "Packages", link: "/packages" },
-      //{ text: "Blog", link: "/blog/getting-started" },
+      { text: "Blog", link: "/blog/getting-started" },
       { text: "FAQ", link: "/faq" },
       {
         text: "Changelog",
@@ -62,19 +70,52 @@ export default defineConfig({
     sidebar: {
       "/docs/": [
         {
-          text: "Reference",
+          text: "Rux Reference",
           collapsed: false,
           items: [
-            { text: "Introduction", link: "/docs/introduction" },
-            { text: "Getting Started", link: "/docs/getting-started" },
-            { text: "Primitive types", link: "/docs/primitive-types" },
+            { text: "Overview", link: "/docs/overview" },
+            { text: "Primitive Types", link: "/docs/primitive-types" },
+            { text: "Manifest Specification", link: "/docs/manifest" },
           ],
         },
+      ],
+      "/api/": [
         {
-          text: "CLI",
+          text: "API Reference",
+          collapsed: false,
+          items: [{ text: "Overview", link: "/api/overview" }],
+        },
+      ],
+      "/cli/": [
+        {
+          text: "CLI Reference",
           collapsed: false,
           items: [
-            { text: "Rux.toml", link: "/docs/rux.toml-spec" },
+            { text: "Overview", link: "/cli/overview" },
+            { text: "rux add", link: "/cli/rux-add" },
+            { text: "rux build", link: "/cli/rux-build" },
+            { text: "rux clean", link: "/cli/rux-clean" },
+            { text: "rux doc", link: "/cli/rux-doc" },
+            { text: "rux fmt", link: "/cli/rux-fmt" },
+            { text: "rux help", link: "/cli/rux-help" },
+            { text: "rux init", link: "/cli/rux-init" },
+            { text: "rux install", link: "/cli/rux-install" },
+            { text: "rux new", link: "/cli/rux-new" },
+            { text: "rux remove", link: "/cli/rux-remove" },
+            { text: "rux run", link: "/cli/rux-run" },
+            { text: "rux test", link: "/cli/rux-test" },
+            { text: "rux up", link: "/cli/rux-up" },
+            { text: "rux version", link: "/cli/rux-version" },
+          ],
+        },
+      ],
+      "/tutorials/": [
+        {
+          text: "Tutorials",
+          collapsed: false,
+          items: [
+            { text: "Overview", link: "/tutorials/overview" },
+            { text: "Hello World", link: "/tutorials/hello-world" },
           ],
         },
       ],
