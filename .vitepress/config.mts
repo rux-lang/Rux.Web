@@ -70,6 +70,13 @@ export default defineConfig({
             { text: "Primitive types", link: "/docs/primitive-types" },
           ],
         },
+        {
+          text: "CLI",
+          collapsed: false,
+          items: [
+            { text: "Rux.toml", link: "/docs/rux.toml-spec" },
+          ],
+        },
       ],
       "/blog/": [
         {

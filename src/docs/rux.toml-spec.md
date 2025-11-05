@@ -1,0 +1,280 @@
+# Rux.toml — Manifest Specification
+
+**Version:** Draft 0.1.0 (November 2025)  
+**Applies to:** Rux ≥0.1.0  
+**File name:** `Rux.toml`  
+**Format:** [TOML v1.0.0](https://toml.io/en/)  
+**Convention:** PascalCase keys (case-sensitive parsing)
+
+## 1. Overview
+
+The `Rux.toml` file defines metadata, build configuration, and dependency information for a Rux project. It is required in every Rux project directory that participates in the build system or workspace.
+
+```toml
+[Package]
+Name = "App"
+Version = "0.1.0"
+Authors = ["Your Name <name@mail.com>"]
+Description = "Example Rux project"
+```
+
+The file must be encoded in **UTF-8** and adhere to **TOML 1.0.0** syntax.
+
+## 2. Conventions
+
+- All keys and tables use **PascalCase** by convention.
+- Parsing is **case-sensitive**, but Rux tools (`rux`, `rux fmt`) will emit PascalCase when writing manifests.
+- Unrecognized fields must be ignored with a warning (to allow forward compatibility).
+
+## 3. `[Package]` Section
+
+Defines project metadata and packaging details.
+
+```toml
+[Package]
+Name = "App"
+Version = "0.1.0"
+Description = "A simple Rux project"
+License = "MIT"
+Authors = ["Your Name <name@mail.com>"]
+Repository = "https://github.com/yourname/app"
+Homepage = "https://app.com"
+Edition = "2025"
+Readme = "README.md"
+Keywords = ["demo", "example"]
+Categories = ["cli"]
+```
+
+### Fields
+
+| Field         | Type             | Required | Description                                                  |
+| ------------- | ---------------- | -------- | ------------------------------------------------------------ |
+| `Name`        | string           | ✅       | Package name (alphanumeric + underscores)                    |
+| `Version`     | string           | ✅       | [Semantic version](https://semver.org) (`MAJOR.MINOR.PATCH`) |
+| `Description` | string           | ❌       | Short package summary                                        |
+| `License`     | string           | ❌       | SPDX license identifier (e.g., `"MIT"`)                      |
+| `Authors`     | array of strings | ❌       | Author names and emails                                      |
+| `Repository`  | string           | ❌       | VCS repository URL                                           |
+| `Homepage`    | string           | ❌       | Project website                                              |
+| `Edition`     | string           | ❌       | Language edition (e.g., `"2025"`)                            |
+| `Readme`      | string           | ❌       | Path to readme file                                          |
+| `Keywords`    | array of strings | ❌       | Search keywords                                              |
+| `Categories`  | array of strings | ❌       | Registry categories                                          |
+
+## 4. `[Build]` Section
+
+Specifies build parameters and compiler options.
+
+```toml
+[Build]
+Target = "x86_64"
+OptLevel = "Release"
+Output = "bin/MyApp"
+EmitIr = false
+Flags = ["--warn-unused", "--color=always"]
+```
+
+### Fields
+
+| Field      | Type             | Description                                              |
+| ---------- | ---------------- | -------------------------------------------------------- |
+| `Target`   | string           | Compilation target triple (e.g., `"x86"`, `"x86_64"`).   |
+| `OptLevel` | string/int       | Optimization level (`"Debug"`, `"Release"`, or numeric). |
+| `Output`   | string           | Path to output binary or library.                        |
+| `EmitIr`   | bool             | Whether to emit intermediate representation.             |
+| `Flags`    | array of strings | Extra flags passed to the compiler.                      |
+
+## 5. `[Dependencies]` Sections
+
+Defines packages this project depends on.  
+Rux supports several dependency tables:
+
+- `[Dependencies]` – runtime dependencies
+- `[DevDependencies]` – for testing and tooling
+- `[BuildDependencies]` – for build scripts or code generation
+
+### Example
+
+```toml
+[Dependencies]
+Std = "1.0"
+Json = "2.1"
+Http = { Version = "1.4", Source = "https://ruxpkg.dev" }
+Utils = { Path = "../utils" }
+
+[DevDependencies]
+TestLib = "0.3"
+
+[BuildDependencies]
+CC = "1.2"
+```
+
+### Dependency specification forms
+
+| Form          | Example                                              | Description                           |
+| ------------- | ---------------------------------------------------- | ------------------------------------- |
+| Simple string | `Json = "2.1"`                                       | Version from the default registry     |
+| Inline table  | `{ Version = "1.4", Source = "https://ruxpkg.dev" }` | Custom source or path                 |
+| Local path    | `{ Path = "../lib" }`                                | Local dependency relative to manifest |
+
+### Inline fields
+
+| Field     | Description                |
+| --------- | -------------------------- |
+| `Version` | Version requirement        |
+| `Path`    | Local relative path        |
+| `Source`  | Custom registry or Git URL |
+
+## 6. `[Features]` Section
+
+Defines named feature sets for conditional compilation.
+
+```toml
+[Features]
+Default = ["Network"]
+Network = ["Http", "Json"]
+CLI = []
+```
+
+- `Default` specifies features automatically enabled when none are given.
+- Other features list dependencies or nested features.
+
+## 7. `[Scripts]` Section
+
+Defines user-defined commands for build automation.
+
+```toml
+[Scripts]
+Build = "rux build"
+Test = "rux test"
+Fmt = "rux fmt"
+```
+
+Scripts can be executed via:
+
+```bash
+rux run Build
+rux run Test
+rux run Fmt
+```
+
+## 8. `[Workspace]` Section
+
+Groups multiple Rux packages under one workspace.
+
+```toml
+[Workspace]
+Members = ["Core", "CLI", "Utils"]
+```
+
+### Fields
+
+| Field     | Type             | Description                        |
+| --------- | ---------------- | ---------------------------------- |
+| `Members` | array of strings | Relative paths to member packages. |
+
+## 9. `[Tool.*]` Sections
+
+Used for third-party or internal tool configuration.
+
+```toml
+[Tool.RuxFmt]
+MaxLineLength = 100
+IndentStyle = "Space"
+IndentWidth = 4
+```
+
+Each tool defines its own schema.  
+Tools should use `Tool.<ToolName>` with PascalCase.
+
+## 10. `Rux.lock`
+
+When dependency resolution occurs, the build system creates `Rux.lock` beside the manifest.
+
+Example:
+
+```toml
+[[Package]]
+Name = "Json"
+Version = "2.1.3"
+Source = "https://ruxpkg.dev"
+Checksum = "8dcb2a7f..."
+
+[[Package]]
+Name = "Http"
+Version = "1.4.0"
+Source = "https://ruxpkg.dev"
+Checksum = "ab2cc1c..."
+```
+
+This file must not be manually edited.
+
+## 11. Grammar Summary
+
+### Table naming
+
+```toml
+[Package]
+[Build]
+[Dependencies]
+[DevDependencies]
+[BuildDependencies]
+[Features]
+[Scripts]
+[Workspace]
+[Tool.<Name>]
+```
+
+### Key rules
+
+- PascalCase keys only.
+- Dotted tables are allowed: `[Tool.RuxFmt]`.
+- Booleans: `true` / `false` (lowercase per TOML spec).
+- Strings: `"..."` UTF-8 quoted strings.
+- Comments: `#` (same as TOML).
+
+## 12. Example Full Manifest
+
+```toml
+[Package]
+Name = "App"
+Version = "0.1.0"
+Description = "A demo Rux application"
+License = "MIT"
+Authors = ["Your Name <name@mail.com>"]
+Edition = "2025"
+
+[Build]
+Target = "x86_64"
+OptLevel = "Release"
+Output = "bin/App"
+
+[Dependencies]
+Std = "1.0"
+Json = "2.1"
+Http = { Version = "1.4", Source = "https://ruxpkg.dev" }
+
+[DevDependencies]
+TestLib = "0.3"
+
+[Features]
+Default = ["Network"]
+Network = ["Http", "Json"]
+
+[Scripts]
+Build = "rux build"
+Test = "rux test"
+
+[Tool.RuxFmt]
+IndentStyle = "Space"
+IndentWidth = 4
+```
+
+## 13. Future Extensions
+
+Planned sections:
+
+- `[Profiles.Release]` and `[Profiles.Debug]` for build profiles
+- `[Registry]` for multiple registries
+- `[Platform]` for per-target configuration
+- `[Plugins]` for build extensions or macros
