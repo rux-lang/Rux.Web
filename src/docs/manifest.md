@@ -69,7 +69,7 @@ Specifies build parameters and compiler options.
 [Build]
 Target = "x86_64"
 OptLevel = "Release"
-Output = "bin/MyApp"
+Output = "Bin/App"
 EmitIr = false
 Flags = ["--warn-unused", "--color=always"]
 ```
@@ -247,7 +247,7 @@ Edition = "2025"
 [Build]
 Target = "x86_64"
 OptLevel = "Release"
-Output = "bin/App"
+Output = "Bin/App"
 
 [Dependencies]
 Std = "1.0"

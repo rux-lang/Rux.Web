@@ -1,4 +1,8 @@
 import { defineConfig } from "vitepress";
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin,
+} from "vitepress-plugin-group-icons";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -59,12 +63,18 @@ export default defineConfig({
       },
       { text: "Tutorials", link: "/tutorials/overview" },
       { text: "Packages", link: "/packages" },
+      {
+        text: "Download",
+        items: [
+          { text: "0.1.0", link: "https://github.com/rux-lang/Rux/releases" },
+          {
+            text: "Changelog",
+            link: "https://github.com/rux-lang/Rux/blob/main/CHANGELOG.md",
+          },
+        ],
+      },
       { text: "Blog", link: "/blog/getting-started" },
       { text: "FAQ", link: "/faq" },
-      {
-        text: "Changelog",
-        link: "https://github.com/rux-lang/Rux/blob/main/CHANGELOG.md",
-      },
     ],
 
     sidebar: {
@@ -193,11 +203,30 @@ export default defineConfig({
   },
 
   markdown: {
+    config(md) {
+      md.use(groupIconMdPlugin);
+    },
     math: true,
     theme: {
       light: "github-light",
       dark: "github-dark",
     },
     languages: [ruxGrammar],
+  },
+
+  vite: {
+    plugins: [
+      groupIconVitePlugin({
+        customIcon: {
+          c: "vscode-icons:file-type-c2",
+          "c++": "vscode-icons:file-type-cpp3",
+          "c#": "vscode-icons:file-type-csharp2",
+          go: "vscode-icons:file-type-go",
+          java: "vscode-icons:file-type-java",
+          rust: "vscode-icons:file-type-rust",
+          rux: "https://rux-lang.dev/logo.svg",
+        },
+      }),
+    ],
   },
 });
