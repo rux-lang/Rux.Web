@@ -13,10 +13,10 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /docs/overview
+      link: /docs/
     - theme: alt
       text: Tutorials
-      link: /tutorials/overview
+      link: /tutorials/
 
 # Features section
 features:
